@@ -1,0 +1,27 @@
+[
+  {
+    "index": 1,
+    "question": "病假需要提前多久申请？",
+    "status": "answered"
+  },
+  {
+    "index": 2,
+    "question": "报销期限多久？",
+    "status": "conflict_needs_clarification"
+  },
+  {
+    "index": 3,
+    "question": "公司给宠物买保险吗？",
+    "status": "insufficient_information"
+  },
+  {
+    "index": 4,
+    "question": "出差回来多久内要报销？",
+    "status": "conflict_needs_clarification"
+  },
+  {
+    "index": 5,
+    "question": "那病假呢？",
+    "status": "answered"
+  }
+]

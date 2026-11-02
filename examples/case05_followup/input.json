@@ -1,0 +1,7 @@
+{
+  "question": "那病假呢？",
+  "history": [
+    {"role": "user", "content": "年假有多少天？"},
+    {"role": "assistant", "content": "根据 D04 号制度，年假为 15 天。"}
+  ]
+}

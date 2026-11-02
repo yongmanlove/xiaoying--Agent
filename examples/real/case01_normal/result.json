@@ -1,0 +1,178 @@
+{
+  "status": "answered",
+  "answer": "依据《病假申请与审批规定》（v1.0，2023-05-01 生效，人力资源部，适用于全体正式员工）：\n\n1. 申请时限：员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请。\n2. 紧急情况：可事后补办，但须在返岗当日完成补交。\n3. 附带要求：病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。\n\n即：常规情况下需提前 24 小时申请；突发急病可先就医、事后补办，但补交必须在返岗当日完成。",
+  "citations": [
+    {
+      "doc_id": "D05",
+      "chunk_id": "D05#1",
+      "quote": "员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请；紧急情况可事后补办，但须在返岗当日完成补交。"
+    },
+    {
+      "doc_id": "D05",
+      "chunk_id": "D05#2",
+      "quote": "病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。"
+    }
+  ],
+  "gaps": [],
+  "clarification_question": "",
+  "trace": [
+    {
+      "step": 1,
+      "content": "我会检索病假申请相关的制度规定。",
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "arguments": {
+            "query": "病假申请 提前申请 时限",
+            "top_k": 5
+          }
+        },
+        {
+          "name": "search_documents",
+          "arguments": {
+            "query": "请假管理制度 病假 流程",
+            "top_k": 5
+          }
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "tool": "search_documents",
+      "arguments": {
+        "query": "病假申请 提前申请 时限",
+        "top_k": 5
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "hit_count": 5,
+        "conflict_doc_ids": [
+          [
+            "D01",
+            "D02"
+          ]
+        ]
+      }
+    },
+    {
+      "step": 1,
+      "tool": "search_documents",
+      "arguments": {
+        "query": "请假管理制度 病假 流程",
+        "top_k": 5
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "hit_count": 5,
+        "conflict_doc_ids": []
+      }
+    },
+    {
+      "step": 2,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "read_snippet",
+          "arguments": {
+            "doc_id": "D05",
+            "chunk_id": "D05#1",
+            "section": "申请时限"
+          }
+        },
+        {
+          "name": "read_snippet",
+          "arguments": {
+            "doc_id": "D05",
+            "chunk_id": "D05#2",
+            "section": "证明材料"
+          }
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "tool": "read_snippet",
+      "arguments": {
+        "doc_id": "D05",
+        "chunk_id": "D05#1",
+        "section": "申请时限"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "doc_id": "D05",
+        "chunk_id": "D05#1"
+      }
+    },
+    {
+      "step": 2,
+      "tool": "read_snippet",
+      "arguments": {
+        "doc_id": "D05",
+        "chunk_id": "D05#2",
+        "section": "证明材料"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "doc_id": "D05",
+        "chunk_id": "D05#2"
+      }
+    },
+    {
+      "step": 3,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "submit_answer",
+          "arguments": {
+            "status": "answered",
+            "answer": "依据《病假申请与审批规定》（v1.0，2023-05-01 生效，人力资源部，适用于全体正式员工）：\n\n1. 申请时限：员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请。\n2. 紧急情况：可事后补办，但须在返岗当日完成补交。\n3. 附带要求：病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。\n\n即：常规情况下需提前 24 小时申请；突发急病可先就医、事后补办，但补交必须在返岗当日完成。",
+            "citations": [
+              {
+                "doc_id": "D05",
+                "chunk_id": "D05#1",
+                "quote": "员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请；紧急情况可事后补办，但须在返岗当日完成补交。"
+              },
+              {
+                "doc_id": "D05",
+                "chunk_id": "D05#2",
+                "quote": "病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。"
+              }
+            ],
+            "gaps": []
+          }
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "tool": "submit_answer",
+      "arguments": {
+        "status": "answered",
+        "answer": "依据《病假申请与审批规定》（v1.0，2023-05-01 生效，人力资源部，适用于全体正式员工）：\n\n1. 申请时限：员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请。\n2. 紧急情况：可事后补办，但须在返岗当日完成补交。\n3. 附带要求：病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。\n\n即：常规情况下需提前 24 小时申请；突发急病可先就医、事后补办，但补交必须在返岗当日完成。",
+        "citations": [
+          {
+            "doc_id": "D05",
+            "chunk_id": "D05#1",
+            "quote": "员工因病无法出勤的，应至少提前 24 小时向直属上级提交病假申请；紧急情况可事后补办，但须在返岗当日完成补交。"
+          },
+          {
+            "doc_id": "D05",
+            "chunk_id": "D05#2",
+            "quote": "病假超过 2 天的，需提供二级甲等以上医院出具的病假证明。"
+          }
+        ],
+        "gaps": []
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "status": "answered",
+        "errors": []
+      }
+    }
+  ]
+}

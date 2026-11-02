@@ -1,0 +1,5 @@
+jieba
+rank-bm25
+openai
+pytest
+python-dotenv

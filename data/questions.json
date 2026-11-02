@@ -1,0 +1,13 @@
+[
+  {"question": "病假需要提前多久申请？"},
+  {"question": "报销期限多久？"},
+  {"question": "公司给宠物买保险吗？"},
+  {"question": "出差回来多久内要报销？"},
+  {
+    "question": "那病假呢？",
+    "history": [
+      {"role": "user", "content": "年假有多少天？"},
+      {"role": "assistant", "content": "根据 D04 号制度，年假为 15 天。"}
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "status": "insufficient_information",
+  "answer": "资料中未找到相关答案",
+  "citations": [],
+  "gaps": [
+    "资料中未包含该问题相关内容"
+  ],
+  "clarification_question": "",
+  "trace": [
+    {
+      "step": 1,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "arguments": {
+            "query": "公司给宠物买保险吗？"
+          }
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "tool": "search_documents",
+      "arguments": {
+        "query": "公司给宠物买保险吗？"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "hit_count": 0,
+        "conflict_doc_ids": []
+      }
+    },
+    {
+      "step": 2,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "arguments": {
+            "query": "公司给宠物买保险"
+          }
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "tool": "search_documents",
+      "arguments": {
+        "query": "公司给宠物买保险"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "hit_count": 0,
+        "conflict_doc_ids": []
+      }
+    },
+    {
+      "step": 3,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "submit_answer",
+          "arguments": {
+            "status": "insufficient_information",
+            "answer": "资料中未找到相关答案",
+            "citations": [],
+            "gaps": [
+              "资料中未包含该问题相关内容"
+            ],
+            "clarification_question": ""
+          }
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "tool": "submit_answer",
+      "arguments": {
+        "status": "insufficient_information",
+        "answer": "资料中未找到相关答案",
+        "citations": [],
+        "gaps": [
+          "资料中未包含该问题相关内容"
+        ],
+        "clarification_question": ""
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "status": "insufficient_information",
+        "errors": []
+      }
+    }
+  ]
+}

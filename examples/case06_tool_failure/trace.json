@@ -1,0 +1,124 @@
+[
+  {
+    "step": 1,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_documents",
+        "arguments": {
+          "query": "病假需要提前多久申请？"
+        }
+      }
+    ]
+  },
+  {
+    "step": 1,
+    "tool": "search_documents",
+    "arguments": {
+      "query": "病假需要提前多久申请？"
+    },
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "error_code": "TOOL_TIMEOUT",
+      "message": "search_documents 超时"
+    }
+  },
+  {
+    "step": 2,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_documents",
+        "arguments": {
+          "query": "病假需要提前多久申请"
+        }
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "tool": "search_documents",
+    "arguments": {
+      "query": "病假需要提前多久申请"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "hit_count": 5,
+      "conflict_doc_ids": []
+    }
+  },
+  {
+    "step": 3,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "read_snippet",
+        "arguments": {
+          "doc_id": "D05",
+          "chunk_id": "D05#1"
+        }
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "tool": "read_snippet",
+    "arguments": {
+      "doc_id": "D05",
+      "chunk_id": "D05#1"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "doc_id": "D05",
+      "chunk_id": "D05#1"
+    }
+  },
+  {
+    "step": 4,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "submit_answer",
+        "arguments": {
+          "status": "answered",
+          "answer": "病假需至少提前 24 小时申请。",
+          "citations": [
+            {
+              "doc_id": "D05",
+              "chunk_id": "D05#1",
+              "quote": "至少提前 24 小时"
+            }
+          ],
+          "gaps": [],
+          "clarification_question": ""
+        }
+      }
+    ]
+  },
+  {
+    "step": 4,
+    "tool": "submit_answer",
+    "arguments": {
+      "status": "answered",
+      "answer": "病假需至少提前 24 小时申请。",
+      "citations": [
+        {
+          "doc_id": "D05",
+          "chunk_id": "D05#1",
+          "quote": "至少提前 24 小时"
+        }
+      ],
+      "gaps": [],
+      "clarification_question": ""
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "status": "answered",
+      "errors": []
+    }
+  }
+]

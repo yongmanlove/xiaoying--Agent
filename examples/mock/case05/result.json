@@ -1,0 +1,112 @@
+{
+  "status": "answered",
+  "answer": "病假需至少提前 24 小时申请。",
+  "citations": [
+    {
+      "doc_id": "D05",
+      "chunk_id": "D05#1",
+      "quote": "至少提前 24 小时"
+    }
+  ],
+  "gaps": [],
+  "clarification_question": "",
+  "trace": [
+    {
+      "step": 1,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "arguments": {
+            "query": "那病假呢？"
+          }
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "tool": "search_documents",
+      "arguments": {
+        "query": "那病假呢？"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "hit_count": 2,
+        "conflict_doc_ids": []
+      }
+    },
+    {
+      "step": 2,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "read_snippet",
+          "arguments": {
+            "doc_id": "D05",
+            "chunk_id": "D05#2"
+          }
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "tool": "read_snippet",
+      "arguments": {
+        "doc_id": "D05",
+        "chunk_id": "D05#2"
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "doc_id": "D05",
+        "chunk_id": "D05#2"
+      }
+    },
+    {
+      "step": 3,
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "submit_answer",
+          "arguments": {
+            "status": "answered",
+            "answer": "病假需至少提前 24 小时申请。",
+            "citations": [
+              {
+                "doc_id": "D05",
+                "chunk_id": "D05#1",
+                "quote": "至少提前 24 小时"
+              }
+            ],
+            "gaps": [],
+            "clarification_question": ""
+          }
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "tool": "submit_answer",
+      "arguments": {
+        "status": "answered",
+        "answer": "病假需至少提前 24 小时申请。",
+        "citations": [
+          {
+            "doc_id": "D05",
+            "chunk_id": "D05#1",
+            "quote": "至少提前 24 小时"
+          }
+        ],
+        "gaps": [],
+        "clarification_question": ""
+      },
+      "ok": true,
+      "summary": {
+        "ok": true,
+        "status": "answered",
+        "errors": []
+      }
+    }
+  ]
+}

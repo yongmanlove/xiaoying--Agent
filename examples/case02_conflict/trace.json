@@ -1,0 +1,137 @@
+[
+  {
+    "step": 1,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_documents",
+        "arguments": {
+          "query": "报销期限多久？"
+        }
+      }
+    ]
+  },
+  {
+    "step": 1,
+    "tool": "search_documents",
+    "arguments": {
+      "query": "报销期限多久？"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "hit_count": 3,
+      "conflict_doc_ids": [
+        [
+          "D01",
+          "D02"
+        ]
+      ]
+    }
+  },
+  {
+    "step": 2,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "read_snippet",
+        "arguments": {
+          "doc_id": "D01"
+        }
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "tool": "read_snippet",
+    "arguments": {
+      "doc_id": "D01"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "doc_id": "D01",
+      "chunk_id": "D01#1"
+    }
+  },
+  {
+    "step": 3,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "read_snippet",
+        "arguments": {
+          "doc_id": "D02"
+        }
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "tool": "read_snippet",
+    "arguments": {
+      "doc_id": "D02"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "doc_id": "D02",
+      "chunk_id": "D02#1"
+    }
+  },
+  {
+    "step": 4,
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "submit_answer",
+        "arguments": {
+          "status": "conflict_needs_clarification",
+          "answer": "发现多篇同主题文档给出了不同规定，无法判定适用哪份，需向您确认。",
+          "citations": [
+            {
+              "doc_id": "D01",
+              "chunk_id": "D01#1",
+              "quote": "30 天内提交报销申请"
+            },
+            {
+              "doc_id": "D02",
+              "chunk_id": "D02#1",
+              "quote": "15 天内提交报销申请"
+            }
+          ],
+          "gaps": [],
+          "clarification_question": "请问您适用哪一份制度？"
+        }
+      }
+    ]
+  },
+  {
+    "step": 4,
+    "tool": "submit_answer",
+    "arguments": {
+      "status": "conflict_needs_clarification",
+      "answer": "发现多篇同主题文档给出了不同规定，无法判定适用哪份，需向您确认。",
+      "citations": [
+        {
+          "doc_id": "D01",
+          "chunk_id": "D01#1",
+          "quote": "30 天内提交报销申请"
+        },
+        {
+          "doc_id": "D02",
+          "chunk_id": "D02#1",
+          "quote": "15 天内提交报销申请"
+        }
+      ],
+      "gaps": [],
+      "clarification_question": "请问您适用哪一份制度？"
+    },
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "status": "conflict_needs_clarification",
+      "errors": []
+    }
+  }
+]
